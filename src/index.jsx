@@ -7,7 +7,7 @@ import { Provider } from "react-redux";
 // core componentss
 import App from "App";
 
-import "index.css";
+import "assets/scss/index.scss";
 
 import History from "utils/BrowserHistory";
 import * as serviceWorker from "serviceWorker";
