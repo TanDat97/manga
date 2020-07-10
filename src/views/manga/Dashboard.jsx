@@ -5,8 +5,15 @@ import { compose } from "redux";
 import DefaultLayout from "layouts/manga/DefaultLayout";
 
 function Dashboard(props, { ...rest }) {
-  console.log(props);
-  return <DefaultLayout>Dashboard</DefaultLayout>;
+  const [search, setSearch] = React.useState("");
+  const handleChangeSearch = (e) => {
+    setSearch(e.target.value);
+  };
+  return (
+    <DefaultLayout search={search} handleChangeSearch={handleChangeSearch}>
+      Dashboard
+    </DefaultLayout>
+  );
 }
 
 const mapStateToProps = (state, ownProps) => {

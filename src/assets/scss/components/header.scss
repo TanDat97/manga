@@ -1,0 +1,160 @@
+.m-header {
+  display: none;
+  background: #fff;
+  border-bottom: 3px solid #ccc;
+
+  .at-container {
+    padding: 0px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    width: 95%;
+  }
+
+  .header-wrap {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+    margin: 0px;
+    min-width: 300px;
+    border-collapse: collapse;
+  }
+
+  .mobile-header {
+    display: flex;
+    align-items: center;
+    width: 600px;
+    max-width: 100%;
+    margin: 0 auto;
+
+    form {
+      max-width: 400px;
+      margin-left: 20px;
+    }
+  }
+
+  & > div img {
+    max-width: 200px;
+    width: 100%;
+  }
+}
+
+.header-search {
+  display: block;
+  width: 325px;
+  margin: 0px auto;
+
+  .btn {
+    color: white;
+    vertical-align: center;
+    padding-top: 4px;
+  }
+
+  form {
+    padding: 0px;
+    border: 2px solid #999;
+    background: #999;
+  }
+}
+
+.pc-menu,
+.pc-menu .nav-full-back,
+.pc-menu .nav-full-height {
+  height: 40px;
+}
+
+.pc-menu {
+  position: relative;
+  background: #fff;
+  border: 0px;
+  z-index: 3;
+  box-shadow: 0px 0px 5px 0px rgba(25, 25, 25, 0.15);
+
+  .at-container {
+    position: relative;
+  }
+
+  .nav-right > ul {
+    float: right;
+    list-style: none;
+    padding: 0px;
+    margin: 0px;
+    z-index: 100;
+
+    & > li {
+      float: left;
+      position: relative;
+      width: 42px;
+      cursor: pointer;
+
+      &:hover {
+        background-color: #ccc;
+      }
+
+      & > a {
+        color: #000;
+        display: block;
+        text-align: center;
+        padding-top: 2px;
+      }
+    }
+  }
+
+  .nav-visible {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    z-index: 10;
+    // width: 100%;
+  }
+
+  .nav-top {
+    .menu-a {
+      display: block;
+      color: rgb(56, 56, 56);
+      background: #fff;
+      font-weight: 400;
+      font-size: 15px;
+    }
+
+    &.nav-float .menu-a {
+      padding: 0px 20px;
+    }
+
+    &.nav-float .menu-li {
+      float: left;
+    }
+
+    .menu-li:hover .menu-a,
+    .menu-li.on .menu-a {
+      background: #ccc;
+      text-decoration: none;
+    }
+  }
+}
+
+.nav-height {
+  height: 40px;
+  line-height: 40px !important;
+}
+
+@media (max-width: 991px) {
+  .m-header {
+    display: block;
+  }
+
+  .pc-menu,
+  .pc-menu-all {
+    display: none;
+  }
+}
+
+@media (max-width: 650px) {
+  .mobile-header > div img {
+    max-width: 130px;
+  }
+
+  .m-header .mobile-header {
+    width: 400px;
+  }
+}
