@@ -3,71 +3,62 @@ import { Link } from "react-router-dom";
 
 function MenuMobile(props) {
   return (
-    <div className="pc-menu">
-      <div className="at-container">
-      <div className="at-container">
-        <div className="nav-right nav-rw nav-height">
-          <ul>
-            <li className="">
-              <Link to="/" data-original-title="<nobr>최근 본 만화</nobr>">
+    <div className="m-menu">
+      <div className="m-wrap">
+        <div className="at-container">
+          <div className="m-table en">
+            <div className="m-icon">
+              <div className="m-icon-detail primary">
+                <ion-icon name="menu-outline" className="large-size"></ion-icon>
+              </div>
+            </div>
+            <div className="m-list">
+              <div className="m-nav">
+                <ul className="m-menu-ul">
+                  <li className="m-menu-li">
+                    <Link to="/" className="m-menu-a">
+                      Cập nhật
+                    </Link>
+                  </li>
+                  <li className="m-menu-li">
+                    <Link to="/" className="m-menu-a">
+                      Truyện
+                    </Link>
+                  </li>
+                  <li className="m-menu-li">
+                    <Link to="/" className="m-menu-a">
+                      Ghi chú
+                    </Link>
+                  </li>
+                  <li className="m-menu-li">
+                    <Link to="/" className="m-menu-a">
+                      Giấy phép
+                    </Link>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div className="m-icon">
+              <Link
+                to="/"
+                className="m-icon-detail"
+                data-original-title="<nobr>최근 본 만화</nobr>"
+              >
                 <ion-icon name="receipt"></ion-icon>
               </Link>
-            </li>
-            <li className="">
-              <Link to="/" data-original-title="<nobr>북마크</nobr>">
+            </div>
+            <div className="m-icon">
+              <Link
+                to="/"
+                className="m-icon-detail"
+                data-original-title="<nobr>북마크</nobr>"
+              >
                 <ion-icon name="bookmark"></ion-icon>
               </Link>
-            </li>
-            <li className="">
-              <Link to="/" data-original-title="<nobr>랜덤</nobr>">
-                <ion-icon name="shuffle"></ion-icon>
-              </Link>
-            </li>
-            <li className="">
-              <Link to="/" data-original-title="<nobr>알림</nobr>">
-                <ion-icon name="notifications"></ion-icon>
-              </Link>
-            </li>
-          </ul>
-          <div className="clearfix"></div>
-        </div>
-      </div>
-      <div className="nav-visible">
-        <div className="at-container">
-          <div className="nav-top nav-float nav-slide">
-            <ul className="menu-ul">
-              <li className="menu-li" style={{ padding: 5 + "px" }}>
-                <Link to="/">
-                  <img src={logo} style={{ height: 30 + "px" }} title="" alt="Logo pc" />
-                </Link>
-              </li>
-              <li className="menu-li">
-                <Link to="/" className="menu-a nav-height">
-                  Cập nhật
-                </Link>
-              </li>
-              <li className="menu-li">
-                <Link to="/" className="menu-a nav-height">
-                  Truyện
-                </Link>
-              </li>
-              <li className="menu-li">
-                <Link to="/" className="menu-a nav-height">
-                  Ghi chú
-                </Link>
-              </li>
-              <li className="menu-li">
-                <Link to="/" className="menu-a nav-height">
-                  Giấy phép
-                </Link>
-              </li>
-              <li className="menu-li" style={{ padding: 3 + "px" }}>
-                <HeaderSearch />
-              </li>
-            </ul>
+            </div>
           </div>
         </div>
-      </div></div>
+      </div>
     </div>
   );
 }

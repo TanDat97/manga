@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 //core components
 import HeaderSearch from "components/manga/HeaderSearch";
 import MenuPC from "components/manga/MenuPC";
+import MenuMobile from "components/manga/MenuMobile";
 
 import "assets/scss/components/header.scss";
 import logo from "assets/img/logo.png";
@@ -30,6 +31,7 @@ function Header(props) {
       </header>
       <nav className="at-menu">
         <MenuPC />
+        <MenuMobile />
       </nav>
     </div>
   );

@@ -127,9 +127,86 @@
 
     .menu-li:hover .menu-a,
     .menu-li.on .menu-a {
-      background: #ccc;
+      background-color: #ccc;
       text-decoration: none;
     }
+  }
+}
+
+.m-menu {
+  display: none;
+  overflow: hidden;
+  background: #fff;
+  position: relative;
+  z-index: 20;
+  box-shadow: 0px 5px 5px -2px rgba(25, 25, 25, 0.15);
+
+  .m-table {
+    display: flex;
+    width: 100%;
+    width: 100%;
+    margin: 0px;
+    min-width: 300px;
+    border-collapse: collapse;
+  }
+
+  .m-icon {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+
+    &-detail {
+      display: block;
+      color: rgb(56, 56, 56);
+      font-weight: 400;
+      text-align: center;
+      height: 40px;
+      line-height: 40px;
+    }
+
+    &-detail.primary {
+      line-height: 60px;
+
+      ion-icon {
+        font-size: 32px;
+      }
+    }
+
+    &:hover .m-icon-detail {
+      color: crimson;
+      text-decoration: none;
+    }
+  }
+
+  .m-list {
+    flex: 1;
+  }
+
+  .m-nav {
+    overflow: hidden;
+  }
+
+  .m-menu-ul {
+    display: flex;
+  }
+
+  .m-menu-li {
+    padding: 0px 10px;
+    display: flex;
+    align-items: center;
+    height: 40px;
+    
+    &:hover .m-menu-a {
+      color: crimson;
+      text-decoration: none;
+    }
+  }
+
+  .m-menu-a {
+    color: #000;
+    text-decoration: none;
+    line-height: 1.2;
   }
 }
 
@@ -147,6 +224,10 @@
   .pc-menu-all {
     display: none;
   }
+
+  .m-menu {
+    display: block;
+  }
 }
 
 @media (max-width: 650px) {
@@ -156,5 +237,9 @@
 
   .m-header .mobile-header {
     width: 400px;
+  }
+
+  .m-menu-a {
+    font-size: 12px;
   }
 }
