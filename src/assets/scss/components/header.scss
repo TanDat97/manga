@@ -67,7 +67,7 @@
   position: relative;
   background: #fff;
   border: 0px;
-  z-index: 3;
+  z-index: 1;
   box-shadow: 0px 0px 5px 0px rgba(25, 25, 25, 0.15);
 
   .at-container {
@@ -75,11 +75,14 @@
   }
 
   .nav-right > ul {
-    float: right;
+    position: absolute;
+    top: 0px;
+    right: 0px;
     list-style: none;
     padding: 0px;
     margin: 0px;
-    z-index: 100;
+    z-index: 15;
+    background: #fff;
 
     & > li {
       float: left;
@@ -87,7 +90,7 @@
       width: 42px;
       cursor: pointer;
 
-      &:hover {
+      &:hover a {
         background-color: #ccc;
       }
 
@@ -95,7 +98,6 @@
         color: #000;
         display: block;
         text-align: center;
-        padding-top: 2px;
       }
     }
   }
@@ -104,7 +106,7 @@
     position: absolute;
     left: 0px;
     top: 0px;
-    z-index: 10;
+    z-index: 0;
     // width: 100%;
   }
 
@@ -173,7 +175,8 @@
       }
     }
 
-    &:hover .m-icon-detail {
+    &:hover .m-icon-detail,
+    &.active .m-icon-detail {
       color: crimson;
       text-decoration: none;
     }
@@ -189,15 +192,15 @@
 
   .m-menu-ul {
     display: flex;
+    align-items: center;
+    height: 40px;
   }
 
   .m-menu-li {
     padding: 0px 10px;
-    display: flex;
-    align-items: center;
-    height: 40px;
-    
-    &:hover .m-menu-a {
+    flex-shrink:0;
+    &:hover .m-menu-a,
+    &.active .m-menu-a {
       color: crimson;
       text-decoration: none;
     }
@@ -213,6 +216,29 @@
 .nav-height {
   height: 40px;
   line-height: 40px !important;
+}
+
+.sidebar-container {
+  display: none;
+  right: 0px;
+  top: 0px;
+  left: 0px;
+  bottom: 0px;
+  position: fixed;
+  background: rgba(0,0,0,0.4);
+  z-index: 900;
+}
+
+.sidebar {
+  right: -320px;
+  top: 0px;
+  width: 280px;
+  height: 100%;
+  position: fixed;
+  z-index: 1000;
+  background: #fff;
+  border-left: 1px solid #ddd;
+  margin-left: 40px;
 }
 
 @media (max-width: 991px) {

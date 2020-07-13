@@ -7,7 +7,7 @@ function MenuMobile(props) {
       <div className="m-wrap">
         <div className="at-container">
           <div className="m-table en">
-            <div className="m-icon">
+            <div className="m-icon" onClick={() => props.handleChangeShowBox(true)}>
               <div className="m-icon-detail primary">
                 <ion-icon name="menu-outline" className="large-size"></ion-icon>
               </div>

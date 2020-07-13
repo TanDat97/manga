@@ -5,11 +5,38 @@ import { Link } from "react-router-dom";
 import HeaderSearch from "components/manga/HeaderSearch";
 import MenuPC from "components/manga/MenuPC";
 import MenuMobile from "components/manga/MenuMobile";
+import Sidebar from "components/manga/Sidebar";
 
 import "assets/scss/components/header.scss";
 import logo from "assets/img/logo.png";
 
 function Header(props) {
+  const [showBox, setShowBox] = React.useState(false);
+  const handleChangeShowBox = async (show) => {
+    let box = document.getElementById("sidebar-box");
+    if (show === true) {
+      setShowBox(show);
+      for (let i = -320; i <= 0; i += 10) {
+        await waitForMoment(5);
+        box.style.right = i + "px";
+      }
+    } else {
+      for (let i = 0; i > -320; i -= 10) {
+        await waitForMoment(5);
+        box.style.right = i + "px";
+      }
+      setShowBox(show);
+    }
+  };
+
+  const waitForMoment = (ms) => {
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        resolve("ok");
+      }, ms);
+    });
+  };
+
   return (
     <div className="header">
       <header className="m-header">
@@ -30,8 +57,9 @@ function Header(props) {
         </div>
       </header>
       <nav className="at-menu">
-        <MenuPC />
-        <MenuMobile />
+        <MenuPC handleChangeShowBox={handleChangeShowBox} />
+        <MenuMobile handleChangeShowBox={handleChangeShowBox} />
+        <Sidebar showBox={showBox} handleChangeShowBox={handleChangeShowBox} />
       </nav>
     </div>
   );
