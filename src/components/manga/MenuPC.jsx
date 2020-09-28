@@ -9,6 +9,33 @@ function MenuPC(props) {
   return (
     <div className="pc-menu">
       <div className="at-container">
+        <div className="at-container">
+          <div className="nav-right nav-rw nav-height">
+            <ul>
+              <li className="">
+                <Link to="/" data-original-title="<nobr>최근 본 만화</nobr>">
+                  <ion-icon name="receipt"></ion-icon>
+                </Link>
+              </li>
+              <li className="">
+                <Link to="/" data-original-title="<nobr>북마크</nobr>">
+                  <ion-icon name="bookmark"></ion-icon>
+                </Link>
+              </li>
+              <li className="">
+                <Link to="/" data-original-title="<nobr>랜덤</nobr>">
+                  <ion-icon name="shuffle"></ion-icon>
+                </Link>
+              </li>
+              <li className="" onClick={() => props.handleChangeShowBox(true)}>
+                <Link to="/" data-original-title="<nobr>알림</nobr>">
+                  <ion-icon name="notifications"></ion-icon>
+                </Link>
+              </li>
+            </ul>
+            <div className="clearfix"></div>
+          </div>
+        </div>
         <div className="nav-visible">
           <div className="at-container">
             <div className="nav-top nav-float nav-slide">
@@ -48,33 +75,6 @@ function MenuPC(props) {
                 </li>
               </ul>
             </div>
-          </div>
-        </div>
-        <div className="at-container">
-          <div className="nav-right nav-rw nav-height">
-            <ul>
-              <li className="">
-                <Link to="/" data-original-title="<nobr>최근 본 만화</nobr>">
-                  <ion-icon name="receipt"></ion-icon>
-                </Link>
-              </li>
-              <li className="">
-                <Link to="/" data-original-title="<nobr>북마크</nobr>">
-                  <ion-icon name="bookmark"></ion-icon>
-                </Link>
-              </li>
-              <li className="">
-                <Link to="/" data-original-title="<nobr>랜덤</nobr>">
-                  <ion-icon name="shuffle"></ion-icon>
-                </Link>
-              </li>
-              <li className="" onClick={() => props.handleChangeShowBox(true)}>
-                <Link to="/" data-original-title="<nobr>알림</nobr>">
-                  <ion-icon name="notifications"></ion-icon>
-                </Link>
-              </li>
-            </ul>
-            <div className="clearfix"></div>
           </div>
         </div>
       </div>

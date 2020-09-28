@@ -227,10 +227,12 @@
   position: fixed;
   background: rgba(0,0,0,0.4);
   z-index: 900;
+  transition: all .5s;
 }
 
 .sidebar {
-  right: -320px;
+  transform: translateX(100%);
+  right: 0;
   top: 0px;
   width: 280px;
   height: 100%;
@@ -239,6 +241,11 @@
   background: #fff;
   border-left: 1px solid #ddd;
   margin-left: 40px;
+  transition: all .5s;
+}
+
+.sidebar.show {
+  transform: translateX(0%);
 }
 
 @media (max-width: 991px) {

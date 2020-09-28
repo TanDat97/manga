@@ -14,27 +14,12 @@ function Header(props) {
   const [showBox, setShowBox] = React.useState(false);
   const handleChangeShowBox = async (show) => {
     let box = document.getElementById("sidebar-box");
+    setShowBox(show);
     if (show === true) {
-      setShowBox(show);
-      for (let i = -320; i <= 0; i += 10) {
-        await waitForMoment(5);
-        box.style.right = i + "px";
-      }
+      box.classList.add("show")
     } else {
-      for (let i = 0; i > -320; i -= 10) {
-        await waitForMoment(5);
-        box.style.right = i + "px";
-      }
-      setShowBox(show);
+      box.classList.remove("show")
     }
-  };
-
-  const waitForMoment = (ms) => {
-    return new Promise((resolve, reject) => {
-      setTimeout(() => {
-        resolve("ok");
-      }, ms);
-    });
   };
 
   return (
